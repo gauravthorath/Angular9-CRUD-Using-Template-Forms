@@ -1,0 +1,43 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Add New Employee</mat-card-title>
+      <mat-card-subtitle>Enter all details marked with * mark</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://i2.wp.com/bizcoachinfo.com/wp-content/uploads/2017/08/10-Best-Practices-for-an-Online-Employee-Handbook.png?resize=960%2C640&ssl=1" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <form class="example-form" #formData="ngForm">
+          {{formData.value | json}}
+            <!-- <mat-form-field class="example-full-width">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="First Name" id="firstName" name="firstName">
+            </mat-form-field> -->
+<!--           
+            <mat-form-field class="example-full-width">
+                <mat-label>Department</mat-label>
+                <input matInput placeholder="Last Name" id="lastName" name="lastName">
+              </mat-form-field> -->
+
+            <!-- <mat-form-field class="example-full-width">
+              <mat-label>Address</mat-label>
+              <textarea matInput placeholder="Complete Address" name="completeAddress"></textarea>
+            </mat-form-field> -->
+
+            <!-- <mat-form-field class="example-full-width">
+                <mat-label>DOJ</mat-label>
+                
+                <input matInput placeholder="DOJ" id="doj" name="doj">
+            </mat-form-field> -->
+            <br />
+            <div>First Name: </div><div><input id='firstName' name='firstName' type="text" ngModel/><br /></div>
+            <div>Last Name:</div><div><input id='lastName' name='lastName' type="text" ngModel/><br /></div>
+            <div>Address:</div><div><input id='address' name='address' type="text" ngModel/><br /></div>
+            <div>DOJ:</div><div><input id='doj' name='doj' type="text" ngModel/><br /></div> 
+             
+           </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click) = "saveEmployee()"  class='primary'>Save</button>
+      <button mat-raised-button (click) = "cancel()"  class='warn'>Cancel</button> 
+    </mat-card-actions>
+  </mat-card>
