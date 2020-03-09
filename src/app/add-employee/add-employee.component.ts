@@ -14,8 +14,8 @@ export class AddEmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveEmployee() {
-   console.log('FormData');
+  saveEmployee(formData) {
+   console.log(formData.value);
   }
 
   cancel() {
