@@ -7,7 +7,7 @@
     <img style="height:100px; width: 100px" mat-card-image src="https://i2.wp.com/bizcoachinfo.com/wp-content/uploads/2017/08/10-Best-Practices-for-an-Online-Employee-Handbook.png?resize=960%2C640&ssl=1" alt="Photo of a Shiba Inu" />
     <mat-card-content>
         <form class="example-form" #formData="ngForm">
-          {{formData.value | json}}
+          <!-- {{formData.value | json}} -->
             <!-- <mat-form-field class="example-full-width">
               <mat-label>Name</mat-label>
               <input matInput placeholder="First Name" id="firstName" name="firstName">
@@ -29,15 +29,15 @@
                 <input matInput placeholder="DOJ" id="doj" name="doj">
             </mat-form-field> -->
             <br />
-            <div>First Name: </div><div><input id='firstName' name='firstName' type="text" ngModel required/><br /></div>
-            <div>Last Name:</div><div><input id='lastName' name='lastName' type="text" ngModel required/><br /></div>
-            <div>Address:</div><div><input id='address' name='address' type="text" ngModel/><br /></div>
-            <div>DOJ:</div><div><input id='doj' name='doj' type="text" ngModel required/><br /></div> 
+            <div>First Name: </div><div><input id='firstName' name='firstName' type="text" [(ngModel)]='employeeData.firstName' required /><br /></div>
+            <div>Last Name:</div><div><input id='lastName' name='lastName' type="text" [(ngModel)]='employeeData.lastName' required /><br /></div>
+            <div>Address:</div><div><input id='Address' name='Address' type="text" [(ngModel)]='employeeData.Address' /><br /></div>
+            <div>DOJ:</div><div><input id='doj' name='doj' type="text" [(ngModel)]='employeeData.doj' /><br /></div> 
              
            </form>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button (click) = "saveEmployee(formData)" class='primary'>Save</button>
+      <button mat-raised-button (click) = "saveEmployee()" class='primary'>Save</button>
       <button mat-raised-button (click) = "cancel()" class='warn'>Cancel</button> 
     </mat-card-actions>
   </mat-card>

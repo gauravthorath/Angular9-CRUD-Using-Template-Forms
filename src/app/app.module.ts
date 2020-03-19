@@ -9,7 +9,9 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { EmployeeService } from './services/employee.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,10 @@ import {FormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

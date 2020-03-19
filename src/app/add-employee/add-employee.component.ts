@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-
+import { EmployeeService } from '../services/employee.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -9,17 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEmployeeComponent implements OnInit {
 
-  constructor() { }
+  employeeData: any = {};
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
   }
 
-  saveEmployee(formData) {
-   console.log(formData.value);
+  saveEmployee() {
+  console.log(this.employeeData);
+  this.employeeService.saveEmployee(this.employeeData)
+   .subscribe(
+    res => console.log(res),
+    err => console.log(err)
+   );
+    // console.log(this.employeeData);
   }
 
   cancel() {
     console.log('FormData');
   }
-
 }
