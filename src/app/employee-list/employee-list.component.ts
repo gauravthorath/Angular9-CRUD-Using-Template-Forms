@@ -7,6 +7,7 @@ import { EmployeeService } from '../services/employee.service';
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
+  displayedColumns: string[] = ['firstName', 'lastName', 'Address', 'doj'];
   employeeList: [];
 
   constructor(private employeeService: EmployeeService) { }
