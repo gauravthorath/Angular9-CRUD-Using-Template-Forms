@@ -1,53 +1,37 @@
-<!-- <table>
-    <tr>
-        <td>Employee's List</td>
-    </tr>
-    <tr *ngFor="let item of employeeList">
-        <td>
-            {{item.firstName}}
-        </td>
-        <td>
-            {{item.lastName}}
-        </td>
-        <td>
-            {{item.Address}}
-        </td>
-        <td>
-            {{item.doj}}
-        </td>
-    </tr>
-</table> -->
-
-
-<table mat-table [dataSource]="employeeList" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
   
     <!-- firstName Column -->
     <ng-container matColumnDef="firstName">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="firstName"> Fisrt Name </th>
       <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
     </ng-container>
   
     <!-- lastName Column -->
     <ng-container matColumnDef="lastName">
-      <th mat-header-cell *matHeaderCellDef> lastName </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
       <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
     </ng-container>
   
     <!-- Address Column -->
     <ng-container matColumnDef="Address">
-      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
       <td mat-cell *matCellDef="let element"> {{element.Address}} </td>
     </ng-container>
   
     <!-- doj Column -->
     <ng-container matColumnDef="doj">
-      <th mat-header-cell *matHeaderCellDef> doj </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Date of Joining </th>
       <td mat-cell *matCellDef="let element"> {{element.doj}} </td>
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+
+  <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons>
+  </mat-paginator>
