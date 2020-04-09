@@ -1,13 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-
-
-
 @Injectable({
   providedIn: 'root'
 })
-
 
 export class EmployeeService {
 
@@ -28,5 +24,13 @@ export class EmployeeService {
     const headers = new HttpHeaders();
     headers.set('Content-Type', 'application/json');
     return this.httpClient.get<any>(Url, {headers});
+  }
+
+  deleteEmployees(id: any) {
+    const Url = `http://localhost:3000/api/getEmployee/${id}`;
+    console.log('in delete service call');
+    const headers = new HttpHeaders();
+    headers.set('Content-Type', 'application/json');
+    return this.httpClient.delete<any>(Url, {headers});
   }
 }

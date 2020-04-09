@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { DeleteModalComponent } from './modals/delete-modal/delete-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { MatSortModule } from '@angular/material/sort';
     EmployeeListComponent,
     EmployeeDetailsComponent,
     AddEmployeeComponent,
+    DeleteModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { MatSortModule } from '@angular/material/sort';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
