@@ -16,7 +16,7 @@ export class AddEmployeeComponent implements OnInit {
 
   saveEmployee() {
   console.log(this.employeeData);
-  this.employeeService.saveEmployee(this.employeeData)
+  this.employeeService.addEmployee(this.employeeData)
    .subscribe(
     res => console.log(res),
     err => console.log(err)
