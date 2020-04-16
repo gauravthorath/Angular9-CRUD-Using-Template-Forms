@@ -7,11 +7,8 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { MaterialModule } from '../material/material.module';
 import { EmployeeComponent } from './employee/employee.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { MatDialogModule } from '@angular/material/dialog';
 import { EmployeeService } from './services/employee.service';
+import { DeleteModalComponent } from '../modals/delete-modal/delete-modal.component';
 
 const EmployeeComponents = [
   EmployeeComponent,
@@ -22,17 +19,13 @@ const EmployeeComponents = [
 @NgModule({
   declarations: [
     EmployeeComponents,
+    DeleteModalComponent,
   ],
   imports: [
     CommonModule,
     EmployeeRoutingModule,
     MaterialModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatDialogModule,
+    FormsModule
   ],
   exports: [],
   providers: [EmployeeService]
