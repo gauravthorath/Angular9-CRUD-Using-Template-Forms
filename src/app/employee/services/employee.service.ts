@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Employee } from '../employee-list/employee-list.component';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 
 export class EmployeeService {
 

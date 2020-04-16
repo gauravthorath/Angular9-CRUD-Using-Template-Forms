@@ -5,13 +5,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { LayoutModule } from '@angular/cdk/layout';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 
 const MaterialComponents = [
-  BrowserAnimationsModule,
   LayoutModule,
   MatToolbarModule,
   MatButtonModule,
@@ -25,7 +23,7 @@ const MaterialComponents = [
 
 @NgModule({
   // declarations: [MaterialComponents],
-  imports: [MaterialComponents],
+  imports: [],
   exports: [MaterialComponents]
 })
 export class MaterialModule { }

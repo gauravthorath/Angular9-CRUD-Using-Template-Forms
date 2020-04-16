@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DeleteModalComponent } from '../modals/delete-modal/delete-modal.component';
+import { DeleteModalComponent } from '../../modals/delete-modal/delete-modal.component';
 import { Router } from '@angular/router';
 
 export interface Employee {
@@ -63,7 +63,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
   }
 
   editEmployee(id: string) {
-    this.router.navigate(['addemployee', {id}]); // To navigate to add employee page with selected employee details
+    this.router.navigate(['/Employee/addemployee', id]); // To navigate to add employee page with selected employee details
     console.log(`Editing...${id}`);
   }
 
