@@ -6,7 +6,7 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { MaterialModule } from '../material/material.module';
 import { EmployeeComponent } from './employee/employee.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { EmployeeService } from './services/employee.service';
 import { DeleteModalComponent } from '../modals/delete-modal/delete-modal.component';
 
